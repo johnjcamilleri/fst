@@ -1,12 +1,8 @@
 {- |
-Module      :  $Header$
-Description :  Finite state automatons
-Maintainer  :  Markus Forsberg
-
 Finite state automatons
 -}
-module FST.Automaton (
-  module FST.AutomatonTypes,
+module Data.FST.Automaton (
+  module Data.FST.AutomatonTypes,
   
   -- * Types
   Automaton,
@@ -21,8 +17,8 @@ module FST.Automaton (
   
   ) where
 
-import FST.AutomatonTypes
-import FST.Utils (tagging)
+import Data.FST.AutomatonTypes
+import Data.FST.Utils (tagging)
 import Data.Maybe (fromJust, maybeToList)
 
 -- | Data type for an automaton

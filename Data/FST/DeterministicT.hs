@@ -1,15 +1,11 @@
 {- |
-Module      :  $Header$
-Description :  Function for making automatons deterministic
-Maintainer  :  Markus Forsberg
-
-Function for making automatons deterministic
+Function for making transducers deterministic
 -}
-module FST.Deterministic (
+module Data.FST.DeterministicT (
   determinize
   ) where
 
-import FST.Automaton
+import Data.FST.Transducer
 
 import Data.List (sort, nub)
 
@@ -26,24 +22,24 @@ type Done = SubSets
 type UnDone = SubSets
 
 -- | Subset transitions
-type SubTransitions a = [(SubSet, [(a, SubSet)])]
+type SubTransitions a = [(SubSet, [(Relation a,SubSet)])]
 
 instance Eq (SubSet) where
- SubSet xs == SubSet ys = xs == ys
+ (SubSet xs) == (SubSet ys) = xs == ys
 
 sub :: [StateTy] -> SubSet
 sub sts = SubSet $ sort $ nub sts
 
-containsFinal :: Automaton a -> SubSet -> Bool
-containsFinal automaton (SubSet xs) = any (isFinal automaton) xs
+containsFinal :: Transducer a -> SubSet -> Bool
+containsFinal automaton (SubSet xs) = or $ map (isFinal automaton) xs
 
--- | Make an automaton deterministic and usefulS
-determinize :: Ord a => Automaton a -> Automaton a
-determinize automaton = let inS = sub $ initials automaton
-                        in det automaton ([],[inS]) []
+-- | Construct a deterministic, usefulS transducer
+determinize :: Ord a => Transducer a -> Transducer a
+determinize automaton = let inS = sub $ initials automaton in
+                            det automaton ([],[inS]) []
 
-det :: Ord a => Automaton a -> (Done,UnDone) ->
-                SubTransitions a -> Automaton a
+det :: Ord a => Transducer a -> (Done,UnDone) ->
+                SubTransitions a -> Transducer a
 det auto (done,[]) trans = rename (reverse trans)
                                   (alphabet auto) [sub (initials auto)]
                                   (filter (containsFinal auto) done)
@@ -55,11 +51,11 @@ det auto (done,subset:undone) trans
                 in det auto (subset:done,undone++nsubs) nTrans
  where elemSS subs sub = elem sub subs
 
-getTransitions :: Ord a => Automaton a -> SubSet ->
+getTransitions :: Ord a => Transducer a -> SubSet ->
                            SubTransitions a -> (SubSets, SubTransitions a)
 getTransitions auto subset@(SubSet xs) trans
-   = let tr = groupBySymbols (concat $ map (transitionList auto) xs) []
-     in (map snd tr, (subset,tr):trans)
+   = let tr = groupBySymbols (concat $ map (transitionList auto) xs) [] in
+         (map snd tr, ((subset,tr):trans))
 
 groupBySymbols :: Eq a => [(a,StateTy)] -> [(a,[StateTy])] -> [(a,SubSet)]
 groupBySymbols []         tr = map (\(a,xs) -> (a,sub xs)) tr

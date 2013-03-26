@@ -1,15 +1,11 @@
 {- |
-Module      :  $Header$
-Description :  Reverse an automaton
-Maintainer  :  Markus Forsberg
-
 Reverse an automaton
 -}
-module FST.Reversal (
+module Data.FST.Reversal (
   reversal
   ) where
 
-import FST.Automaton
+import Data.FST.Automaton
 
 import Data.Array
 

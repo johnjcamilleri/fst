@@ -1,11 +1,7 @@
 {- |
-Module      :  $Header$
-Description :  Functions for constructing a simplified regular expression.
-Maintainer  :  Markus Forsberg
-
 Functions for constructing a simplified regular expression.
 -}
-module FST.RegTypes (
+module Data.FST.RegTypes (
   -- * Type classes
   Combinators (
     (<|>), (|>), star, plus, empty

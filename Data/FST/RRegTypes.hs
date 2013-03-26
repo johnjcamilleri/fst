@@ -1,12 +1,8 @@
 {- |
-Module      :  $Header$
-Description :  Functions for constructing a simplified regular relation.
-Maintainer  :  Markus Forsberg
-
 Functions for constructing a simplified regular relation.
 -}
-module FST.RRegTypes ( 
-  module FST.RegTypes,
+module Data.FST.RRegTypes ( 
+  module Data.FST.RegTypes,
   -- * Types
   RReg(..),
   -- * Combinators
@@ -15,8 +11,8 @@ module FST.RRegTypes (
   idR, r,
   ) where
 
-import FST.RegTypes
-import FST.TransducerTypes (Symbol(..))
+import Data.FST.RegTypes
+import Data.FST.TransducerTypes (Symbol(..))
 
 import Data.List (nub)
 

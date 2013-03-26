@@ -1,6 +1,6 @@
 -- | Haskell version of drinks example
 
-import FST.TransducerInterface
+import Data.FST.TransducerInterface
 import Data.Maybe (fromJust)
 
 {-

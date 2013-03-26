@@ -1,6 +1,6 @@
 -- | Email address recogniser using transducer interface API
 
-import FST.TransducerInterface
+import Data.FST.TransducerInterface
 import Data.Maybe (fromJust)
 
 charsToUnion :: [Char] -> Reg String

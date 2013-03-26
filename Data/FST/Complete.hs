@@ -1,17 +1,13 @@
 {-# LANGUAGE TupleSections #-}
 
 {- |
-Module      :  $Header$
-Description :  Function for making an automaton complete
-Maintainer  :  Markus Forsberg
-
 Function for making an automaton complete (transition on every symbol at every state)
 -}
-module FST.Complete (
+module Data.FST.Complete (
   complete
   ) where
 
-import FST.Automaton
+import Data.FST.Automaton
 import Data.List ( (\\) )
 
 -- | Make a automaton complete (transition on every symbol at every state)

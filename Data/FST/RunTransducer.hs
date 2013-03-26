@@ -1,16 +1,12 @@
 {- |
-Module      :  $Header$
-Description :  Running a transducer with some input
-Maintainer  :  Markus Forsberg
-
 Running a transducer with some input
 -}
-module FST.RunTransducer (
+module Data.FST.RunTransducer (
   -- * Run functions
   applyUp, applyDown
   ) where
 
-import FST.Transducer
+import Data.FST.Transducer
 
 import Data.Maybe (catMaybes)
 

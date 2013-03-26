@@ -1,11 +1,7 @@
 {- |
-Module      :  $Header$
-Description :  General utility functions
-Maintainer  :  Markus Forsberg
-
 General utility functions
 -}
-module FST.Utils (
+module Data.FST.Utils (
   cross,
   insert,
   merge,

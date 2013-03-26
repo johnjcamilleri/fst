@@ -1,14 +1,11 @@
 {- |
-Module      :  $Header$
-Description :  Parser produced by Happy Version 1.10
-
 Parser produced by Happy Version 1.10
 -}
-module FST.Parse where
+module Data.FST.Parse where
 
-import FST.NReg
-import FST.RRegTypes (RReg)
-import FST.Lexer
+import Data.FST.NReg
+import Data.FST.RRegTypes (RReg)
+import Data.FST.Lexer
 
 import Control.Monad (liftM,liftM2)
 

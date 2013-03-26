@@ -1,15 +1,11 @@
 {- |
-Module      :  $Header$
-Description :  Function for constructing an epsilon-free transducer
-Maintainer  :  Markus Forsberg
-
 Function for constructing an epsilon-free transducer
 -}
-module FST.EpsilonFreeT (
+module Data.FST.EpsilonFreeT (
   epsilonfree
   ) where
 
-import FST.Transducer
+import Data.FST.Transducer
 import Data.List (partition)
 
 -- | Construct an epsilon-free, usefulS transducer

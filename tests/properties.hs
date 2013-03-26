@@ -7,14 +7,14 @@ import Data.Maybe
 
 import Test.QuickCheck
 
-import FST.LBFA
-import FST.Automaton
+import Data.FST.LBFA
+import Data.FST.Automaton
 
-import FST.RegTypes
-import FST.RRegTypes (idR)
-import FST.TransducerTypes
-import FST.TransducerInterface (compile)
-import FST.RunTransducer
+import Data.FST.RegTypes
+import Data.FST.RRegTypes (idR)
+import Data.FST.TransducerTypes
+import Data.FST.TransducerInterface (compile)
+import Data.FST.RunTransducer
 
 instance Arbitrary a => Arbitrary (Reg a) where
   arbitrary = oneof [return Empty,

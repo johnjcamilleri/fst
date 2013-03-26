@@ -1,11 +1,7 @@
 {- |
-Module      :  $Header$
-Description :  Helper functions for handling shell/command-line options
-Maintainer  :  Markus Forsberg
-
 Helper functions for handling shell/command-line options
 -}
-module FST.Arguments (
+module Data.FST.Arguments (
 
   -- * Commands ADT
   InteractiveCommand (..),

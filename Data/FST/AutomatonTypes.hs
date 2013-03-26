@@ -1,11 +1,7 @@
 {- |
-Module      :  $Header$
-Description :  Types for Automaton
-Maintainer  :  Markus Forsberg
-
 Types for Automaton
 -}
-module FST.AutomatonTypes (
+module Data.FST.AutomatonTypes (
 
   -- * Types
   StateTy, FirstState, LastState, InitialStates, FinalStates, 

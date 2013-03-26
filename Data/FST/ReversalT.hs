@@ -1,15 +1,11 @@
 {- |
-Module      :  $Header$
-Description :  Reverse a transducer
-Maintainer  :  Markus Forsberg
-
 Reverse an transducer
 -}
-module FST.ReversalT (
+module Data.FST.ReversalT (
   reversal
   ) where
 
-import FST.Transducer
+import Data.FST.Transducer
 
 import Data.Array
 

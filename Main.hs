@@ -1,10 +1,6 @@
 {-# LANGUAGE DoAndIfThenElse, FlexibleContexts, GeneralizedNewtypeDeriving #-}
 
 {- |
-Module      :  $Header$
-Description :  Interactive shell and batch transducer application
-Maintainer  :  Markus Forsberg
-
 fstStudio takes a program consisting of regular relations that denotes
 the relation between two regular languages and constructs a
 transducer. If a regular expression, not a relation, is given, then it
@@ -204,12 +200,12 @@ non-deterministic andnon-minimal.
 [@q@] End session.
 
 -}
-module FST.Main where
+module Main where
 
-import FST.TransducerInterface
-import FST.RRegTypes
-import FST.Arguments
-import FST.Info
+import Data.FST.TransducerInterface
+import Data.FST.RRegTypes
+import Data.FST.Arguments
+import Data.FST.Info
 
 import Text.Printf
 
@@ -233,6 +229,21 @@ main = do
       case ret of
         Left err -> putStrLn err
         Right _  -> return ()
+
+-- | Display welcome message
+welcome :: IO ()
+welcome = putStr $ unlines [
+  "***********************************************************",
+  "* Finite State Transducer Studio",
+  "* Written purely in Haskell.",
+  "* Version : 0.10",
+  "* Updated : 17 March 2013",
+  "* Author  : Markus Forsberg",
+  "* With contributions by Baldur Blöndal & John J. Camilleri",
+  "***********************************************************",
+  "",
+  "Type 'h' for help."
+  ]
 
 -- | Run in batch mode with given arguments
 batchMode :: [String] -> ErrorT String IO ()
@@ -533,3 +544,31 @@ runCmd (ApplyD inp) = do
        modify $ updateOutputs $ map unwords res
        return "Input accepted. Type 'vo' to view outputs."
     Nothing -> return "Input rejected."
+
+-- | Dislay list of shell commands for user
+help :: String
+help = unlines [
+  "List of Commands:",
+  "r <reg exp>    : read a regular relation from standard input.",
+  "b              : build a deterministic, minimal transducer.",
+  "bn             : build a possibly non-deterministic, non-minimal transducer.",
+  "m              : minimize loaded/built transducer.",
+  "det            : determinize loaded/built transducer.",
+  "s  <filename>  : save to file.",
+  "l  <filename>  : load from file.",
+  "l a | b        : load and union.",
+  "l a b          : load and concatenate.",
+  "l a *          : load and apply Kleene's star.",
+  "l a .o. b      : load and compose.",
+  "vt             : view loaded/built transducer.",
+  "vr             : view typed/loaded regular relation.",
+  "vi             : view loaded input.",
+  "vo             : view produced output.",
+  "d              : apply transducer down with loaded input.",
+  "u              : apply transducer up with loaded input.",
+  "d <symbols>    : apply transducer down with symbols.",
+  "u <symbols>    : apply transducer up with symbols.",
+  "c              : Clear memory.",
+  "h              : display list of commands.",
+  "q              : end session."
+  ]

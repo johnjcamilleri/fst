@@ -1,11 +1,7 @@
 {- |
-Module      :  $Header$
-Description :  Type system for transducers
-Maintainer  :  Markus Forsberg
-
 Type system for transducers
 -}
-module FST.TransducerTypes (
+module Data.FST.TransducerTypes (
 
   -- * Types
   StateTy,
@@ -23,7 +19,7 @@ module FST.TransducerTypes (
   TransducerFunctions (..),
   ) where
 
-import FST.AutomatonTypes (
+import Data.FST.AutomatonTypes (
   StateTy, FinalStates, Sigma, FirstState, LastState, InitialStates
   )
 
