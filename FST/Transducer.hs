@@ -1,8 +1,8 @@
 {- |
 Transducers and their functions
 -}
-module Data.FST.Transducer (
-  module Data.FST.TransducerTypes,
+module FST.Transducer (
+  module FST.TransducerTypes,
 
   -- * Types
   Transducer,
@@ -23,8 +23,8 @@ module Data.FST.Transducer (
   showTransducer
   ) where
 
-import Data.FST.TransducerTypes
-import Data.FST.Utils (tagging, remove, merge)
+import FST.TransducerTypes
+import FST.Utils (tagging, remove, merge)
 
 import Data.Maybe (fromJust)
 import Data.List ((\\), nub, delete)

@@ -1,9 +1,9 @@
 {- |
 API for finite state automatons
 -}
-module Data.FST.AutomatonInterface (
-  module Data.FST.RegTypes,
-  module Data.FST.AutomatonTypes,
+module FST.AutomatonInterface (
+  module FST.RegTypes,
+  module FST.AutomatonTypes,
   
   -- * Types
   Automaton,
@@ -24,13 +24,13 @@ module Data.FST.AutomatonInterface (
   showAutomaton,
   ) where
 
-import Data.FST.Automaton
-import Data.FST.AutomatonTypes
-import Data.FST.Complete
-import qualified Data.FST.Deterministic as D
-import qualified Data.FST.LBFA as L
-import Data.FST.RegTypes hiding (reversal)
-import Data.FST.Reversal (reversal)
+import FST.Automaton
+import FST.AutomatonTypes
+import FST.Complete
+import qualified FST.Deterministic as D
+import qualified FST.LBFA as L
+import FST.RegTypes hiding (reversal)
+import FST.Reversal (reversal)
 
 -- | Compile a non-deterministic finite-state automaton
 compileNFA :: Ord a => Reg a -> Sigma a -> StateTy -> Automaton a

@@ -1,7 +1,7 @@
 {- |
 General utility functions
 -}
-module Data.FST.Utils (
+module FST.Utils (
   cross,
   insert,
   merge,

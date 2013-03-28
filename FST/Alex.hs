@@ -23,7 +23,7 @@ reassembly into a suitable configuration.
 Chris Dornan, Aug-95, 10-Jul-96, 29-Sep-97
 ------------------------------------------------------------------------------}
 
-module Data.FST.Alex where
+module FST.Alex where
 
 import Data.Array
 

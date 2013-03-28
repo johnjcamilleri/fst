@@ -1,7 +1,7 @@
 {- |
 Helper functions for handling shell/command-line options
 -}
-module Data.FST.Arguments (
+module FST.Arguments (
 
   -- * Commands ADT
   InteractiveCommand (..),
@@ -153,7 +153,7 @@ parseBatch cmdline = case getOpt Permute batchOptions cmdline of
   (_, _,      errs) -> Left (concat errs ++ usageInfo header batchOptions) where
     header = "Usage: fst [FILE.net or FILE.fst] [OPTIONS...]"
 
--- -- | Handle batch input command
+-- | Handle batch input command
 inputB  :: [BatchCommand] -> Maybe FilePath
 inputB  cs = listToMaybe [ file | Input  file <- cs ]
 

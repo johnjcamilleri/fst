@@ -1,8 +1,8 @@
 {- |
 Left-biased finite transducers
 -}
-module Data.FST.LBFT (
-  module Data.FST.Transducer,
+module FST.LBFT (
+  module FST.Transducer,
 
   -- * Types
   LBFT (..),
@@ -15,11 +15,11 @@ module Data.FST.LBFT (
 import Data.List (delete,nub,(\\))
 import Control.Monad.State 
 
-import Data.FST.EpsilonFreeT
-import Data.FST.RRegTypes
-import Data.FST.Transducer
-import Data.FST.Utils (merge,remove)
-import qualified Data.FST.AutomatonInterface as A
+import FST.EpsilonFreeT
+import FST.RRegTypes
+import FST.Transducer
+import FST.Utils (merge,remove)
+import qualified FST.AutomatonInterface as A
 
 -- | Data type for a LBFT (left-biased finite transducer)
 data LBFT a = LBFT {

@@ -202,10 +202,10 @@ non-deterministic andnon-minimal.
 -}
 module Main where
 
-import Data.FST.TransducerInterface
-import Data.FST.RRegTypes
-import Data.FST.Arguments
-import Data.FST.Info
+import FST.TransducerInterface
+import FST.RRegTypes
+import FST.Arguments
+import FST.Info
 
 import Text.Printf
 

@@ -1,7 +1,7 @@
 {- |
 Functions for constructing a simplified regular expression.
 -}
-module Data.FST.RegTypes (
+module FST.RegTypes (
   -- * Type classes
   Combinators (
     (<|>), (|>), star, plus, empty

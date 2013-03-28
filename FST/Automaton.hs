@@ -1,8 +1,8 @@
 {- |
 Finite state automatons
 -}
-module Data.FST.Automaton (
-  module Data.FST.AutomatonTypes,
+module FST.Automaton (
+  module FST.AutomatonTypes,
   
   -- * Types
   Automaton,
@@ -17,8 +17,8 @@ module Data.FST.Automaton (
   
   ) where
 
-import Data.FST.AutomatonTypes
-import Data.FST.Utils (tagging)
+import FST.AutomatonTypes
+import FST.Utils (tagging)
 import Data.Maybe (fromJust, maybeToList)
 
 -- | Data type for an automaton

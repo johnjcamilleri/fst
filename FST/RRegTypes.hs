@@ -1,8 +1,8 @@
 {- |
 Functions for constructing a simplified regular relation.
 -}
-module Data.FST.RRegTypes ( 
-  module Data.FST.RegTypes,
+module FST.RRegTypes ( 
+  module FST.RegTypes,
   -- * Types
   RReg(..),
   -- * Combinators
@@ -11,8 +11,8 @@ module Data.FST.RRegTypes (
   idR, r,
   ) where
 
-import Data.FST.RegTypes
-import Data.FST.TransducerTypes (Symbol(..))
+import FST.RegTypes
+import FST.TransducerTypes (Symbol(..))
 
 import Data.List (nub)
 

@@ -1,7 +1,7 @@
 {- |
 Neutral regular expressions
 -}
-module Data.FST.NReg (
+module FST.NReg (
   -- * Types
   NReg(..),
 
@@ -12,8 +12,8 @@ module Data.FST.NReg (
   ) where
 
 import Control.Monad
-import Data.FST.RegTypes
-import Data.FST.RRegTypes
+import FST.RegTypes
+import FST.RRegTypes
 
 -- | Neutral regular expressions
 data NReg a = NCross      (NReg a) (NReg a)

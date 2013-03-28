@@ -1,11 +1,11 @@
 {- |
 Function for constructing an epsilon-free transducer
 -}
-module Data.FST.EpsilonFreeT (
+module FST.EpsilonFreeT (
   epsilonfree
   ) where
 
-import Data.FST.Transducer
+import FST.Transducer
 import Data.List (partition)
 
 -- | Construct an epsilon-free, usefulS transducer

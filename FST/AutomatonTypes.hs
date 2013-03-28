@@ -1,7 +1,7 @@
 {- |
 Types for Automaton
 -}
-module Data.FST.AutomatonTypes (
+module FST.AutomatonTypes (
 
   -- * Types
   StateTy, FirstState, LastState, InitialStates, FinalStates, 

@@ -1,9 +1,9 @@
 {- |
 State data structure for the interactive shell
 -}
-module Data.FST.Info where
+module FST.Info where
 
-import Data.FST.TransducerInterface
+import FST.TransducerInterface
 
 -- | State in interactive shell
 data Info = Info {

@@ -1,11 +1,11 @@
 {- |
 Reverse an automaton
 -}
-module Data.FST.Reversal (
+module FST.Reversal (
   reversal
   ) where
 
-import Data.FST.Automaton
+import FST.Automaton
 
 import Data.Array
 

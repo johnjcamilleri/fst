@@ -1,12 +1,12 @@
 {- |
 Running a transducer with some input
 -}
-module Data.FST.RunTransducer (
+module FST.RunTransducer (
   -- * Run functions
   applyUp, applyDown
   ) where
 
-import Data.FST.Transducer
+import FST.Transducer
 
 import Data.Maybe (catMaybes)
 

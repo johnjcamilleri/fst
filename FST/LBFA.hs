@@ -1,8 +1,8 @@
 {- |
 Left-biased finite automata
 -}
-module Data.FST.LBFA (
-  module Data.FST.Automaton,
+module FST.LBFA (
+  module FST.Automaton,
 
   -- * Types
   LBFA,
@@ -15,11 +15,11 @@ module Data.FST.LBFA (
 
 import Control.Monad.State 
 
-import Data.FST.RegTypes
-import Data.FST.Automaton
-import Data.FST.Deterministic
-import Data.FST.Complete
-import Data.FST.Utils (remove,merge)
+import FST.RegTypes
+import FST.Automaton
+import FST.Deterministic
+import FST.Complete
+import FST.Utils (remove,merge)
 
 import Data.List (delete,nub,(\\))
 

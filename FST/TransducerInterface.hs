@@ -88,9 +88,9 @@ type StateTy = Int
 > numberOfTransitions :: Transducer a -> Int
 
 -}
-module Data.FST.TransducerInterface (
+module FST.TransducerInterface (
   -- * Functions on regular expressions and relations
-  module Data.FST.RRegTypes,
+  module FST.RRegTypes,
 
   -- * Types
   Transducer,
@@ -116,16 +116,15 @@ module Data.FST.TransducerInterface (
   applyUp, applyDown,
   ) where
 
--- import Data.FST.FileImport (open, saveToFile)
 import Prelude hiding (catch)
-import Data.FST.Parse (parseProgram, parseExp) 
-import Data.FST.RRegTypes hiding (reversal)
-import Data.FST.RunTransducer
-import Data.FST.Transducer
-import Data.FST.TransducerTypes
-import qualified Data.FST.DeterministicT as D
-import qualified Data.FST.LBFT as L
-import Data.FST.ReversalT
+import FST.Parse (parseProgram, parseExp) 
+import FST.RRegTypes hiding (reversal)
+import FST.RunTransducer
+import FST.Transducer
+import FST.TransducerTypes
+import qualified FST.DeterministicT as D
+import qualified FST.LBFT as L
+import FST.ReversalT
 
 import Control.Exception (IOException, catch, try)
 import Control.Monad.Error

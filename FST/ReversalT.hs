@@ -1,11 +1,11 @@
 {- |
 Reverse an transducer
 -}
-module Data.FST.ReversalT (
+module FST.ReversalT (
   reversal
   ) where
 
-import Data.FST.Transducer
+import FST.Transducer
 
 import Data.Array
 

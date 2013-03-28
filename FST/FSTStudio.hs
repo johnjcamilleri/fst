@@ -200,7 +200,7 @@ non-deterministic andnon-minimal.
 [@q@] End session.
 
 -}
-module Data.FST.FSTStudio where
+module FST.FSTStudio where
 
 -- This is a dummy module for the sake of documenation
 
