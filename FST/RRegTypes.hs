@@ -1,6 +1,7 @@
 {- |
 Functions for constructing a simplified regular relation.
 -}
+{-# LANGUAGE CPP #-}
 module FST.RRegTypes ( 
   module FST.RegTypes,
   -- * Types
@@ -11,6 +12,9 @@ module FST.RRegTypes (
   idR, r,
   ) where
 
+#if MIN_VERSION_base(4,8,0)
+import Prelude hiding ((<*>))
+#endif
 import FST.RegTypes
 import FST.TransducerTypes (Symbol(..))
 

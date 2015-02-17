@@ -7,7 +7,8 @@ import FST.NReg
 import FST.RRegTypes (RReg)
 import FST.Lexer
 
-import Control.Monad (liftM,liftM2)
+import Control.Monad (liftM,liftM2,ap)
+import Control.Applicative(Applicative(..))
 
 data HappyAbsSyn t5 t6 t7
 	= HappyTerminal Token
@@ -709,6 +710,12 @@ happyError (t:_) = failE $ "Parse failure at symbol '"++ show t ++"' on line " +
 
 data E a =   Ok a
 	   | FailE String
+
+instance Functor E where fmap = liftM
+
+instance Applicative E where
+  pure = return
+  (<*>) = ap
 
 instance Monad (E) where
  return = returnE
