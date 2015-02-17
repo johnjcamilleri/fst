@@ -1,6 +1,7 @@
 {- |
 Neutral regular expressions
 -}
+{-# LANGUAGE CPP #-}
 module FST.NReg (
   -- * Types
   NReg(..),
@@ -11,6 +12,9 @@ module FST.NReg (
   nVarToSymbol
   ) where
 
+#if MIN_VERSION_base(4,8,0)
+import Prelude hiding ((<*>))
+#endif
 import Control.Monad
 import FST.RegTypes
 import FST.RRegTypes
