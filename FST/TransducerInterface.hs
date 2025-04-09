@@ -127,7 +127,7 @@ import qualified FST.LBFT as L
 import FST.ReversalT
 
 import Control.Exception (IOException, catch, try)
-import Control.Monad.Error
+import Control.Monad.Except
 
 -- | Construct a deterministic, epsilon-free, minimal transducer
 compile :: Ord a => RReg a -> Sigma a -> Transducer a
@@ -156,23 +156,23 @@ numberOfTransitions transducer = sum [ length (transitionList transducer s)
                                      | s <- states transducer]
 
 -- | Load a transducer from file
-load :: FilePath -> ErrorT String IO (Transducer String)
+load :: FilePath -> ExceptT String IO (Transducer String)
 load = fmap read . open
 
 -- | Save a transducer from file
-save :: FilePath -> Transducer String -> ErrorT String IO ()
+save :: FilePath -> Transducer String -> ExceptT String IO ()
 save file auto = saveToFile file (show auto)
 
 -- | Open a file and return contents as string
-open :: FilePath -> ErrorT String IO String
-open file = ErrorT $ catch 
-  (Right `liftM` readFile file) 
+open :: FilePath -> ExceptT String IO String
+open file = ExceptT $ catch 
+  (Right `fmap` readFile file) 
   (\(e :: IOException) -> return $ throwError $ "Error: Unable to open \"" ++ file ++ "\"")
 
 -- | Save contents (as string) to a file
-saveToFile :: FilePath -> String -> ErrorT String IO ()
-saveToFile file str = ErrorT $ catch 
-  (Right `liftM` writeFile file str) 
+saveToFile :: FilePath -> String -> ExceptT String IO ()
+saveToFile file str = ExceptT $ catch 
+  (Right `fmap` writeFile file str) 
   (\(e :: IOException) -> return $ throwError $ "Error: Unable to save to \"" ++ file ++ "\"")
 
 -- | The empty transucer
